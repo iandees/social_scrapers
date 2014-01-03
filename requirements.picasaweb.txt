@@ -1,0 +1,3 @@
+google-api-python-client==1.2
+httplib2==0.8
+
