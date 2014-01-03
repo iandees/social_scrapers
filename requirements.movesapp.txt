@@ -1,0 +1,4 @@
+google-api-python-client==1.2
+httplib2==0.8
+psycopg2==2.5.1
+
