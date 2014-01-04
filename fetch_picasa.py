@@ -55,6 +55,7 @@ def photos_since(credentials, album_id, since_time=None):
     http = httplib2.Http()
     http = credentials.authorize(http)
 
+    last_single_id = None
     offset = 1
     while True:
         # The fields= stuff comes from https://code.google.com/p/gdata-issues/issues/detail?id=138#c14
@@ -79,8 +80,11 @@ def photos_since(credentials, album_id, since_time=None):
             for entry in feed_entries:
                 yield entry
             offset += len(feed_entries)
-            if len(feed_entries) == 0:
-                break
+            if len(feed_entries) == 1:
+                this_single_id = entry['gphoto$id']['$t']
+                if last_single_id == this_single_id:
+                    break
+                last_single_id = this_single_id
         else:
             print content
             break
