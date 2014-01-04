@@ -108,7 +108,7 @@ if __name__ == '__main__':
         if (storyline is None) and (response_etag is not None):
             print "Date %s has not changed. Skipping insert." % (row[0])
             continue
-        elif (response_etag != etag):
+        elif row and (response_etag != etag):
             print "Date %s has changed. Updating existing data." % (row[0])
             cur.execute("UPDATE source.movesapp SET data=%s, etag=%s WHERE day=%s", [
                 json.dumps(storyline),
