@@ -80,7 +80,9 @@ def photos_since(credentials, album_id, since_time=None):
             for entry in feed_entries:
                 yield entry
             offset += len(feed_entries)
-            if len(feed_entries) == 1:
+            if len(feed_entries) == 0:
+                break
+            elif len(feed_entries) == 1:
                 this_single_id = entry['gphoto$id']['$t']
                 if last_single_id == this_single_id:
                     break
