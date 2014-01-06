@@ -1,0 +1,23 @@
+{
+    "foursquare": {
+        "client_id": "example",
+        "client_secret": "example",
+        "user_access_token": "example"
+    },
+    "google": {
+        "client_id": "example",
+        "client_secret": "example",
+        "album_id": "example"
+    },
+    "movesapp": {
+        "client_id": "example",
+        "client_secret": "example"
+    },
+    "twitter": {
+        "client_id": "example",
+        "client_secret": "example",
+        "access_token": "example",
+        "access_token_secret": "example"
+    },
+    "database": "host='localhost' dbname='social_backup' user='iandees'"
+}
